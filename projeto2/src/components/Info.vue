@@ -9,6 +9,7 @@
             <li>vue.js</li>
         </ul>
         <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
+        <p>para acessar meu portfólio <a :href="meu_link" target="_blank">basta clicar aqui</a></p>
         <Picture />
     </div>
 </template>
@@ -27,6 +28,7 @@ export default {
             email: "teste@gmail.com",
             esta_trabalhando: false,
             mostrar_email: true,
+            meu_link: "https://testemeupai.com.br",
         };
     },
 };

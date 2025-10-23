@@ -9,7 +9,7 @@ export default {
     name: "Picture",
     data() {
         return {
-            avatar: "/src/assets/avatar.png",
+            avatar: "/img/avatar.png",
             descrição: "Matheus Henrique",
         };
     },
