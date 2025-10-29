@@ -8,6 +8,9 @@
             <li>laravel</li>
             <li>vue.js</li>
         </ul>
+        <div>
+            <button @click="showEmail">{{texto_botao}}</button>
+        </div>
         <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
         <p>para acessar meu portfólio <a :href="meu_link" target="_blank">basta clicar aqui</a></p>
         <Picture />
@@ -27,9 +30,20 @@ export default {
             nome: "Alex",
             email: "teste@gmail.com",
             esta_trabalhando: false,
-            mostrar_email: true,
+            mostrar_email: false,
             meu_link: "https://testemeupai.com.br",
+            texto_botao: "mostrar Email",
         };
     },
+    methods: {
+        showEmail() {
+            this.mostrar_email = !this.mostrar_email
+            if(!this.mostrar_email){
+                this.texto_botao = "Mostrar email"
+            }else {
+                this.texto_botao = "Esconder Email"
+            }
+        }
+    }
 };
 </script>
