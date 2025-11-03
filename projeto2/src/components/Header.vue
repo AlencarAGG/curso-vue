@@ -31,7 +31,7 @@
         display: flex;
         margin: 10px;
         list-style: none;
-        color:rgb(151, 42, 165);
+        color:rgb(165, 42, 42);
         align-content: left;
         align-items: left;
         justify-content: center;
@@ -40,6 +40,8 @@
 
     li{
         padding: 0px 10px;
+        font-size: 30px;
+        font-weight: 800;
     }
 
     a {

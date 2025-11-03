@@ -2,11 +2,13 @@
     <div>
         <p v-if="esta_trabalhando">Estou trabalhando no momento.</p>
         <p v-else>Estou em busca de novas oportunidades.</p>
-        <p>Uso as seguintes a tecnologias:</p>
+        <p>Uso as seguintes tecnologias para Frontend:</p>
         <ul>
-            <li>php</li>
-            <li>laravel</li>
-            <li>vue.js</li>
+            <li v-for="(technology, index) in Frontend_tecnologies" :key="index">{{ technology }}</li>
+        </ul>
+        <p>Uso as seguintes tecnologias para Backend:</p>
+        <ul>
+            <li v-for="technology in Backend_tecnologies" :key="technology.id">{{ technology.language }}</li>
         </ul>
         <div>
             <button @click="showEmail">{{texto_botao}}</button>
@@ -33,6 +35,13 @@ export default {
             mostrar_email: false,
             meu_link: "https://testemeupai.com.br",
             texto_botao: "mostrar Email",
+            Frontend_tecnologies: ["HTML","CSS","VUE"],
+            Backend_tecnologies: [
+              {id: 1, language: "PHP"},
+              {id: 2, language: "LARAVEL"},
+              {id: 3, language: "JAVASCRIPT"}, 
+            ],
+
         };
     },
     methods: {
