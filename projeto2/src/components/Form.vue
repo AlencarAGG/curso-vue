@@ -1,10 +1,16 @@
 <template>
     <div>
         <h1>Meu Formulario:</h1>
-        <form action="">
-            <div><InputText /></div>
-            <div><InputText /></div>
-            <div><InputSubmit /></div>
+        <form action="" @submit="enviar_formulario($event)">
+            <div>
+                <input type="text" v-model="name">
+            </div>
+            <div>
+                <input type="text" v-model="email">
+            </div>
+            <div>
+                <inputSubmit/>
+            </div>
         </form>
     </div>
 </template>
@@ -20,7 +26,27 @@ export default {
         InputSubmit,
     },
     data() {
-        return {};
+        return {
+            name: "",
+            email: "",
+        };
     },
+    methods: {
+        enviar_formulario(e) {
+
+            e.preventDefault();
+            
+            const name = this.name;
+            const email = this.email;
+
+            console.log("formulario enviado")
+            console.log("meu nome é = " + name);
+            console.log("meu email é = " + email);
+
+            // ajax
+            // inserir dados no banco
+            
+        }
+    }
 };
 </script>
